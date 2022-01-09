@@ -17,7 +17,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class Usuario implements UserDetails {
 
-
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -87,27 +86,27 @@ public class Usuario implements UserDetails {
 	}
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {		
+	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.perfis;
 	}
 
 	@Override
-	public String getPassword() {		
+	public String getPassword() {
 		return this.senha;
 	}
 
 	@Override
-	public String getUsername() {		
+	public String getUsername() {
 		return this.email;
 	}
 
 	@Override
-	public boolean isAccountNonExpired() {		
+	public boolean isAccountNonExpired() {
 		return true;
 	}
 
 	@Override
-	public boolean isAccountNonLocked() { 
+	public boolean isAccountNonLocked() {
 		return true;
 	}
 
